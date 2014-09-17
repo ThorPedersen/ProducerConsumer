@@ -6,11 +6,17 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-   class Program
+   class Application
    {
       static void Main(string[] args)
       {
+         BoundedBuffer buf = new BoundedBuffer(4);
 
+         Producer prod = new Producer(buf, 15);
+
+         Consumer con = new Consumer(buf);
+
+         Parallel.Invoke(prod.Run(), con.Run());
       }
    }
 }

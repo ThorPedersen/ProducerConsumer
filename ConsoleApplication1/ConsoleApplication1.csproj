@@ -41,7 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Application.cs" />
+    <Compile Include="BoundedBuffer.cs" />
+    <Compile Include="Consumer.cs" />
+    <Compile Include="Producer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
