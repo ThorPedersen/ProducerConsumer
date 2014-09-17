@@ -12,7 +12,7 @@ namespace ConsoleApplication1
 
       public BoundedBuffer(int capacity)
       {
-         
+         int Capacity = capacity;
       }
 
       Boolean IsFull()
