@@ -8,11 +8,11 @@ namespace ConsoleApplication1
 {
    class Consumer
    {
-      //Consumer IBuffer = new Consumer();
+      Consumer _buff = new Consumer();
 
-      public Consumer(IBuffer buf)
+      public Consumer(BoundedBuffer buf)
       {
-         
+
       }
 
       public void Run()

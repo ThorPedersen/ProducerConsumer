@@ -12,7 +12,7 @@ namespace ConsoleApplication1
       private static int LastElement = -1;
       private static int LastItem = -1;
 
-      public Producer(IBuffer buffer, int howMany)
+      public Producer(BoundedBuffer many, int howMany)
       {
          
       }
