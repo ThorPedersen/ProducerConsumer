@@ -8,9 +8,9 @@ namespace ConsoleApplication1
 {
    class Consumer
    {
-      Consumer IBuffer = new Consumer();
+      //Consumer IBuffer = new Consumer();
 
-      public Consumer(BoundedBuffer buf)
+      public Consumer(IBuffer buf)
       {
          
       }

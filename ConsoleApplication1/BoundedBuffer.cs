@@ -15,18 +15,28 @@ namespace ConsoleApplication1
          
       }
 
-      public void IsFull()
+      Boolean IsFull()
       {
-         
+         if (true)
+         {
+            return true;
+         }
+         else
+         {
+            return false;
+         }
       }
-      public void Put(int element)
+      override void Put(int element)
       {
          
       }
 
-      public void Take()
+      override int Take()
       {
-         
+         if (true)
+         {
+            
+         }
       }
 
 

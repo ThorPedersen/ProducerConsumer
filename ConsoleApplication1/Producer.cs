@@ -17,19 +17,19 @@ namespace ConsoleApplication1
          
       //}
 
-      public Producer(BoundedBuffer buffer, int howMany)
+      public Producer(IBuffer buffer, int howMany)
       {
          
       }
 
       public void Run()
       {
-         ThreadStart ts = new ThreadStart();
+         ThreadStart ts = new ThreadStart(Run);
 
-         for (int i = 0; i < 10; i++)
-         {
-            Add.Item(item);
-         }
+         //for (int i = 0; i < 10; i++)
+         //{
+         //   Add.Item(item);
+         //}
       }
    }
 }
