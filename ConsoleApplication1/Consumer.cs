@@ -8,16 +8,22 @@ namespace ConsoleApplication1
 {
    class Consumer
    {
-      Consumer _buff = new Consumer();
-
-      public Consumer(BoundedBuffer buf)
+      private int _max;
+      private BoundedBuffer _buffer;
+      public Consumer(BoundedBuffer buffer, int expectedAmount)
       {
-
+         this._buffer = buffer;
+         this._max = expectedAmount;
       }
 
       public void Run()
       {
-         
+         for (int i = 0; i < this._max; i++)
+         {
+            int temp = this._buffer.Take();
+            Console.WriteLine("Consumer removed {0} from buffer", temp);
+
+         }
       }
    }
 }

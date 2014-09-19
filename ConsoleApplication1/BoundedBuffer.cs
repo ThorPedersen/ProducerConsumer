@@ -8,35 +8,44 @@ namespace ConsoleApplication1
 {
    class BoundedBuffer
    {
-      int Capacity { get; set; }
+      private Queue<int> _queue;
+      private int _cap;
 
       public BoundedBuffer(int capacity)
       {
-         int Capacity = capacity;
+         this._cap = capacity;
+         this._queue = new Queue<int>();
       }
 
-      Boolean IsFull()
+      public Boolean IsFull()
       {
-         if (true)
-         {
-            return true;
-         }
-         else
-         {
-            return false;
-         }
+         return true;
       }
-      override void Put(int element)
+      public void Put(int element)
       {
-         
-      }
-
-      override int Take()
-      {
-         if (true)
-         {
+         this._queue.Enqueue(element);
+         //if (true)
+         //{
             
-         }
+         //}
+         //else
+         //{
+            
+         //}
+      }
+
+      public int Take()
+      {
+         int temp = this._queue.Dequeue();
+         //if (true)
+         //{
+         //   return 1;
+         //}
+         //else
+         //{
+
+         //}
+         return temp;
       }
 
 

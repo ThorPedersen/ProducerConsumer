@@ -14,9 +14,14 @@ namespace ConsoleApplication1
 
          Producer prod = new Producer(buf, 15);
 
-         Consumer con = new Consumer(buf);
+         Consumer con = new Consumer(buf, 10);
 
-         Parallel.Invoke(prod.Run(), con.Run());
+         Parallel.Invoke(prod.Run, con.Run);
+
+         //Parallel.Invoke(
+         //   () => Console.Write("Hej"),
+         //   () => Console.Write("Hello"));
+
       }
    }
 }

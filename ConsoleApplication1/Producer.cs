@@ -11,20 +11,26 @@ namespace ConsoleApplication1
    {
       private static int LastElement = -1;
       private static int LastItem = -1;
+      
+      private int _max;
+      private BoundedBuffer _buffer;
 
-      public Producer(BoundedBuffer many, int howMany)
+      public Producer(BoundedBuffer buffer, int howManyToProduce)
       {
-         
+         this._max = howManyToProduce;
+         this._buffer = buffer;
       }
 
       public void Run()
       {
-         ThreadStart ts = new ThreadStart(Run);
+         //ThreadStart ts = new ThreadStart(Run);
 
-         //for (int i = 0; i < 10; i++)
-         //{
-         //   Add.Item(item);
-         //}
+         for (int i = 0; i < this._max; i++)
+         {
+            this._buffer.Put(i);
+            Console.WriteLine("Producer added {0} to buffer", i);
+
+         }
       }
    }
 }
