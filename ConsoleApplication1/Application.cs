@@ -18,6 +18,8 @@ namespace ConsoleApplication1
 
          Parallel.Invoke(prod.Run, con.Run);
 
+         Console.ReadKey();
+
          //Parallel.Invoke(
          //   () => Console.Write("Hej"),
          //   () => Console.Write("Hello"));

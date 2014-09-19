@@ -21,31 +21,34 @@ namespace ConsoleApplication1
       {
          return true;
       }
+
+      //public Boolean IsEmpty()
+      //{
+      //   return true;
+      //}
       public void Put(int element)
       {
          this._queue.Enqueue(element);
          //if (true)
          //{
-            
+
          //}
          //else
          //{
-            
+
          //}
       }
 
       public int Take()
       {
-         int temp = this._queue.Dequeue();
-         //if (true)
-         //{
-         //   return 1;
-         //}
-         //else
-         //{
+         while (this._queue.Count == 0)
+         {
+            //Wait while the queue is empty
+         }
 
-         //}
+         int temp = this._queue.Dequeue();
          return temp;
+
       }
 
 
