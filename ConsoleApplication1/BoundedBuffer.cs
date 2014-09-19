@@ -19,24 +19,20 @@ namespace ConsoleApplication1
 
       public Boolean IsFull()
       {
-         return true;
+         if (this._queue.Count >= this._cap)
+         {
+            return true;
+         }
+         return false;
       }
 
-      //public Boolean IsEmpty()
-      //{
-      //   return true;
-      //}
       public void Put(int element)
       {
+         while (this.IsFull())
+         {
+            // wait until buffer is not full
+         }
          this._queue.Enqueue(element);
-         //if (true)
-         //{
-
-         //}
-         //else
-         //{
-
-         //}
       }
 
       public int Take()
