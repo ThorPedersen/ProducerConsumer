@@ -20,14 +20,8 @@ namespace ConsoleApplication1
       {
          for (int i = 0; i < this._max; i++)
          {
-
-            lock (this._buffer)
-            {
-               int temp = this._buffer.Take();
-               Console.WriteLine("Consumer removed {0} from buffer", temp);
-            }
-
-
+            int temp = this._buffer.Take();
+            
          }
       }
    }

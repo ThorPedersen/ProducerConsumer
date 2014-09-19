@@ -11,7 +11,7 @@ namespace ConsoleApplication1
    {
       private static int LastElement = -1;
       private static int LastItem = -1;
-      
+
       private int _max;
       private BoundedBuffer _buffer;
 
@@ -27,12 +27,9 @@ namespace ConsoleApplication1
 
          for (int i = 0; i < this._max; i++)
          {
-            lock (this._buffer)
-            {
-               this._buffer.Put(i);
-               Console.WriteLine("Producer added {0} to buffer", i);
-            }
+            this._buffer.Put(i);
             
+
 
          }
       }

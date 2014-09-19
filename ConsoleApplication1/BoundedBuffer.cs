@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ConsoleApplication1
@@ -28,25 +29,35 @@ namespace ConsoleApplication1
 
       public void Put(int element)
       {
-         while (this.IsFull())
+         lock (_queue)
          {
-            // wait until buffer is not full
+            while (this.IsFull())
+            {
+               // wait until buffer is not full
+               Monitor.Wait(this._queue);
+            }
+            this._queue.Enqueue(element);
+            Console.WriteLine("The value {0} was added to buffer on thread >x<", element);
+            Monitor.PulseAll(this._queue);
          }
-         this._queue.Enqueue(element);
       }
 
       public int Take()
       {
-         while (this._queue.Count == 0)
+         lock (this._queue)
          {
-            //Wait while the queue is empty
+            while (this._queue.Count == 0)
+            {
+               //Wait while the queue is empty
+               Monitor.Wait(this._queue);
+            }
+
+            int temp = this._queue.Dequeue();
+            Console.WriteLine("Element {0} was just removed from buffer", temp);
+            Monitor.PulseAll(this._queue);
+            return temp;
+            
          }
-
-         int temp = this._queue.Dequeue();
-         return temp;
-
       }
-
-
    }
 }
