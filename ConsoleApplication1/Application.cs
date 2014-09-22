@@ -14,10 +14,13 @@ namespace ConsoleApplication1
 
          Producer prod = new Producer(buf, 10);
 
-         Consumer con = new Consumer(buf, 10);
+         Consumer con = new Consumer(buf);
 
          Parallel.Invoke(prod.Run, con.Run);
 
+
+         Console.ReadKey();
+         Console.WriteLine("The buffer was filled {0} times", buf._num);
          Console.ReadKey();
 
          //Parallel.Invoke(

@@ -11,6 +11,7 @@ namespace ConsoleApplication1
    {
       private Queue<int> _queue;
       private int _cap;
+      public int _num;
 
       public BoundedBuffer(int capacity)
       {
@@ -22,6 +23,8 @@ namespace ConsoleApplication1
       {
          if (this._queue.Count >= this._cap)
          {
+            //Console.WriteLine("Buffer is full.");
+            this._num ++;
             return true;
          }
          return false;

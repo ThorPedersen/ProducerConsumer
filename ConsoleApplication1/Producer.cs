@@ -9,8 +9,9 @@ namespace ConsoleApplication1
 {
    class Producer
    {
-      private static int LastElement = -1;
+      public static int LastElement = -1;
       private static int LastItem = -1;
+      public static int amount = 10;
 
       private int _max;
       private BoundedBuffer _buffer;
@@ -23,15 +24,13 @@ namespace ConsoleApplication1
 
       public void Run()
       {
-         //ThreadStart ts = new ThreadStart(Run);
 
-         for (int i = 0; i < this._max; i++)
+         for (int i = 0; i < amount; i++)
          {
             this._buffer.Put(i);
-            
-
-
+            LastElement = LastElement + i;
          }
+         this._buffer.Put(LastElement);
       }
    }
 }
