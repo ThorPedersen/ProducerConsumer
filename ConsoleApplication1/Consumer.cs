@@ -8,7 +8,7 @@ namespace ConsoleApplication1
 {
    class Consumer
    {
-      private int _max;
+      //private int _max;
       private BoundedBuffer _buffer;
       //public Consumer(BoundedBuffer buffer, int expectedAmount)
       public Consumer(BoundedBuffer buffer)
@@ -19,14 +19,13 @@ namespace ConsoleApplication1
 
       public void Run()
       {
-         while(Producer.amount > Producer.LastElement)
-         for (int i = 0; i < this._max; i++)
+         while (Producer.amount > Producer.LastElement)
          {
-            if (this._max > Producer.LastElement)
+            for (int i = 0; i < Producer.amount; i++)
             {
                int temp = this._buffer.Take();
-            }
 
+            }
          }
       }
    }

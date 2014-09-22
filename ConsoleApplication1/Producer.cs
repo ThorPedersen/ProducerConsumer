@@ -28,7 +28,6 @@ namespace ConsoleApplication1
          for (int i = 0; i < amount; i++)
          {
             this._buffer.Put(i);
-            LastElement = LastElement + i;
          }
          this._buffer.Put(LastElement);
       }

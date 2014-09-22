@@ -10,7 +10,7 @@ namespace ConsoleApplication1
    {
       static void Main(string[] args)
       {
-         BoundedBuffer buf = new BoundedBuffer(4);
+         BoundedBuffer buf = new BoundedBuffer(6);
 
          Producer prod = new Producer(buf, 10);
 
