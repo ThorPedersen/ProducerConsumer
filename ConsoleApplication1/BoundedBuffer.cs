@@ -11,7 +11,7 @@ namespace ConsoleApplication1
    {
       private Queue<int> _queue;
       private int _cap;
-      public int _num;
+      private bool _hasLastElement = false;
 
       public BoundedBuffer(int capacity)
       {
@@ -24,7 +24,6 @@ namespace ConsoleApplication1
          if (this._queue.Count >= this._cap)
          {
             //Console.WriteLine("Buffer is full.");
-            this._num ++;
             return true;
          }
          return false;
@@ -47,15 +46,31 @@ namespace ConsoleApplication1
 
       public int Take()
       {
+         
          lock (this._queue)
          {
+
+            if (this._hasLastElement)
+            {
+               return Producer.LastElement;
+            }
             while (this._queue.Count == 0)
             {
                //Wait while the queue is empty
                Monitor.Wait(this._queue);
+
+               if (this._hasLastElement)
+               {
+                  return Producer.LastElement;
+               }
             }
 
+
             int temp = this._queue.Dequeue();
+            if (temp == Producer.LastElement)
+            {
+               this._hasLastElement = true;
+            }
             Console.WriteLine("Element {0} was just removed from buffer", temp);
             Monitor.PulseAll(this._queue);
             return temp;

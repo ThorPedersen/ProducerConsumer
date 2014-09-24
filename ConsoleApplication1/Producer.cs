@@ -29,7 +29,7 @@ namespace ConsoleApplication1
          {
             this._buffer.Put(i);
          }
-         //this._buffer.Put(LastElement);
+         this._buffer.Put(LastElement);
       }
    }
 }
