@@ -11,7 +11,7 @@ namespace ConsoleApplication1
    {
       public static int LastElement = -1;
       private static int LastItem = -1;
-      public static int amount = 10;
+      //public static int amount = 10;
 
       private int _max;
       private BoundedBuffer _buffer;
@@ -25,11 +25,11 @@ namespace ConsoleApplication1
       public void Run()
       {
 
-         for (int i = 0; i < amount; i++)
+         for (int i = 0; i < this._max; i++)
          {
             this._buffer.Put(i);
          }
-         this._buffer.Put(LastElement);
+         //this._buffer.Put(LastElement);
       }
    }
 }
