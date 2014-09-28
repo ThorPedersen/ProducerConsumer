@@ -10,8 +10,7 @@ namespace ConsoleApplication1
    class Producer
    {
       public static int LastElement = -1;
-      private static int LastItem = -1;
-      //public static int amount = 10;
+      public static int LastItem = -1;
 
       private int _max;
       private BoundedBuffer _buffer;

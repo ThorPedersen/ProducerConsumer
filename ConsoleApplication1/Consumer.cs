@@ -8,7 +8,6 @@ namespace ConsoleApplication1
 {
    class Consumer
    {
-
       private BoundedBuffer _buffer;
       public Consumer(BoundedBuffer buffer)
       {

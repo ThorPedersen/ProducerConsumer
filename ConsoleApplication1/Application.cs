@@ -11,16 +11,18 @@ namespace ConsoleApplication1
       static void Main(string[] args)
       {
          BoundedBuffer buf = new BoundedBuffer(4);
+         
 
-         Producer prod = new Producer(buf, 10);
+         Producer prod = new Producer(buf, 100);
          Consumer cons1 = new Consumer(buf);
          Consumer cons2 = new Consumer(buf);
+         //MiddleMan mid = new MiddleMan(,);
 
-         Parallel.Invoke(prod.Run, cons1.Run, cons2.Run);
+         Parallel.Invoke(prod.Run, cons1.Run, cons2.Run/*, mid.Run*/);
 
 
          Console.ReadKey();
-         Console.WriteLine("DONE!\nThe buffer was filled {0} times", buf._num);
+         Console.WriteLine("DONE!\nThe buffer was filled {0} times", BoundedBuffer._bug);
          Console.ReadKey();
 
          //Parallel.Invoke(

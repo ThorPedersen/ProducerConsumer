@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-   class BoundedBuffer
+   public class BoundedBuffer
    {
       private Queue<int> _queue;
       private int _cap;
       private bool _hasLastElement = false;
+      public static int _bug;
 
       public BoundedBuffer(int capacity)
       {
@@ -35,6 +36,7 @@ namespace ConsoleApplication1
          {
             while (this.IsFull())
             {
+               _bug++;
                // wait until buffer is not full
                Monitor.Wait(this._queue);
             }
